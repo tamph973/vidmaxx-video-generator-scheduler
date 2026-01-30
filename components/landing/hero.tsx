@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
-import { Section } from '@/components/ui/section';
 import { PlayCircle, ArrowRight, Sparkles } from 'lucide-react';
+import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
+import Link from 'next/link';
 
 export function Hero() {
 	return (
@@ -38,12 +39,28 @@ export function Hero() {
 					</p>
 
 					<div className='flex w-full flex-col items-center justify-center gap-4 sm:flex-row'>
-						<Button
-							size='lg'
-							className='group h-12 min-w-[160px] rounded-full text-base'>
-							<Sparkles className='mr-2 h-4 w-4 transition-transform group-hover:scale-110' />
-							Start Free Trial
-						</Button>
+						<SignedIn>
+							<Button
+								size='lg'
+								asChild
+								className='group h-12 min-w-[160px] rounded-full text-base'>
+								<Link href='/dashboard'>
+									<Sparkles className='mr-2 h-4 w-4 transition-transform group-hover:scale-110' />
+									Go to Dashboard
+								</Link>
+							</Button>
+						</SignedIn>
+						<SignedOut>
+							<SignInButton mode='modal'>
+								<Button
+									size='lg'
+									className='group h-12 min-w-[160px] rounded-full text-base'>
+									<Sparkles className='mr-2 h-4 w-4 transition-transform group-hover:scale-110' />
+									Start Free Trial
+								</Button>
+							</SignInButton>
+						</SignedOut>
+
 						<Button
 							size='lg'
 							variant='outline'

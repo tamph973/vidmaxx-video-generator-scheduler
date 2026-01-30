@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { Video } from 'lucide-react';
+import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/nextjs';
 
 export function Navbar() {
 	return (
@@ -33,16 +34,32 @@ export function Navbar() {
 					</Link>
 				</nav>
 				<div className='flex items-center gap-4'>
-					<Link
-						href='/login'
-						className='hidden text-sm font-medium text-zinc-400 transition-colors hover:text-white md:block'>
-						Login
-					</Link>
-					<Button
-						size='sm'
-						className='rounded-full px-6 font-semibold'>
-						Get Started
-					</Button>
+					<SignedOut>
+						<SignInButton mode='modal'>
+							<Button
+								variant='ghost'
+								className='text-zinc-400 hover:text-white'>
+								Login
+							</Button>
+						</SignInButton>
+						<SignInButton mode='modal'>
+							<Button
+								size='sm'
+								className='rounded-full px-6 font-semibold'>
+								Get Started
+							</Button>
+						</SignInButton>
+					</SignedOut>
+					<SignedIn>
+						<Button
+							size='sm'
+							variant='ghost'
+							asChild
+							className='mr-2 text-zinc-400 hover:text-white'>
+							<Link href='/dashboard'>Dashboard</Link>
+						</Button>
+						<UserButton />
+					</SignedIn>
 				</div>
 			</Container>
 		</header>
