@@ -44,66 +44,107 @@
 	--radius-2xl: calc(var(--radius) + 8px);
 	--radius-3xl: calc(var(--radius) + 12px);
 	--radius-4xl: calc(var(--radius) + 16px);
+
+	/* Line height tokens for consistent typography */
+	--leading-none: 1;
+	--leading-tight: 1.25;
+	--leading-snug: 1.375;
+	--leading-normal: 1.5;
+	--leading-relaxed: 1.625;
+	--leading-loose: 2;
 }
 
 :root {
-	--radius: 0.5rem;
-	--background: 0 0% 100%;
-	--foreground: 240 10% 3.9%;
+	/* Refined Persian Blue Scale - Modern SaaS Palette */
+	--persian-blue-50: 237 241 252; /* #EEF1FC */
+	--persian-blue-100: 212 222 250; /* #D4DEFA */
+	--persian-blue-200: 169 189 245; /* #A9BDF5 */
+	--persian-blue-300: 126 156 240; /* #7E9CF0 */
+	--persian-blue-400: 83 123 235; /* #537BEB */
+	--persian-blue-500: 40 89 230; /* #2859E6 */
+	--persian-blue-600: 28 57 187; /* #1C39BB - Main Brand Base */
+	--persian-blue-700: 21 45 143; /* #152D8F */
+	--persian-blue-800: 14 32 99; /* #0E2063 */
+	--persian-blue-900: 7 20 56; /* #071438 */
+	--persian-blue-950: 4 10 28; /* #040A1C */
+
+	/* Core Light Theme (Default) */
+	--background: 0 0% 100%; /* White */
+	--foreground: 240 10% 3.9%; /* Zinc-950 */
+
 	--card: 0 0% 100%;
 	--card-foreground: 240 10% 3.9%;
+
 	--popover: 0 0% 100%;
 	--popover-foreground: 240 10% 3.9%;
-	--primary: 252 87% 65%; /* Vivid Violet */
-	--primary-foreground: 0 0% 98%;
-	--secondary: 240 4.8% 95.9%;
+
+	--primary: 229 74% 42%; /* #1C39BB (Persian Blue 600) */
+	--primary-foreground: 0 0% 100%;
+
+	--secondary: 240 4.8% 95.9%; /* Zinc-100 */
 	--secondary-foreground: 240 5.9% 10%;
-	--muted: 240 4.8% 95.9%;
-	--muted-foreground: 240 3.8% 46.1%;
-	--accent: 240 4.8% 95.9%;
+
+	--muted: 240 4.8% 95.9%; /* Zinc-100 */
+	--muted-foreground: 240 3.8% 46.1%; /* Zinc-500 */
+
+	--accent: 240 4.8% 95.9%; /* Zinc-100 */
 	--accent-foreground: 240 5.9% 10%;
+
 	--destructive: 0 84.2% 60.2%;
 	--destructive-foreground: 0 0% 98%;
-	--border: 240 5.9% 90%;
-	--input: 240 5.9% 90%;
-	--ring: 252 87% 65%;
-	--chart-1: 12 76% 61%;
-	--chart-2: 173 58% 39%;
-	--chart-3: 197 37% 24%;
-	--chart-4: 43 74% 66%;
-	--chart-5: 27 87% 67%;
 
-	/* Sidebar default variables needed for shadcn sidebar */
-	--sidebar-background: 0 0% 98%;
+	--border: 240 5.9% 90%; /* Zinc-200 */
+	--input: 240 5.9% 90%;
+	--ring: 229 74% 42%; /* Persian Blue */
+
+	/* Radius */
+	--radius: 0.5rem;
+
+	/* Sidebar variables */
+	--sidebar-background: 0 0% 98%; /* Zinc-50 */
 	--sidebar-foreground: 240 5.3% 26.1%;
-	--sidebar-primary: 240 5.9% 10%;
+	--sidebar-primary: 229 74% 42%;
 	--sidebar-primary-foreground: 0 0% 98%;
 	--sidebar-accent: 240 4.8% 95.9%;
 	--sidebar-accent-foreground: 240 5.9% 10%;
 	--sidebar-border: 220 13% 91%;
-	--sidebar-ring: 217.2 91.2% 59.8%;
+	--sidebar-ring: 229 74% 42%;
 }
 
 .dark {
-	--background: 240 10% 3.9%;
-	--foreground: 0 0% 98%;
-	--card: 240 10% 3.9%;
+	/* Rich Dark Theme - Modern SaaS */
+	--background: 240 10% 3.9%; /* #09090b (Zinc 950) - Rich Charcoal */
+	--foreground: 0 0% 98%; /* Zinc-50 */
+
+	--card: 240 10% 3.9%; /* Matches bg for flat look */
 	--card-foreground: 0 0% 98%;
+
 	--popover: 240 10% 3.9%;
 	--popover-foreground: 0 0% 98%;
-	--primary: 252 87% 65%; /* Vivid Violet */
-	--primary-foreground: 0 0% 98%;
-	--secondary: 240 3.7% 15.9%;
+
+	/* Electric Blue for Dark Mode Visibility */
+	--primary: 217 91% 60%; /* #3b82f6 (Blue 500) */
+	--primary-foreground: 0 0% 100%;
+
+	/* Deeper Secondary/Muted for Hierarchy */
+	--secondary: 240 3.7% 15.9%; /* #27272a (Zinc 800) */
 	--secondary-foreground: 0 0% 98%;
-	--muted: 240 3.7% 15.9%;
-	--muted-foreground: 240 5% 64.9%;
+
+	--muted: 240 3.7% 15.9%; /* Zinc-800 */
+	--muted-foreground: 240 5% 64.9%; /* Zinc-400 */
+
 	--accent: 240 3.7% 15.9%;
 	--accent-foreground: 0 0% 98%;
+
 	--destructive: 0 62.8% 30.6%;
 	--destructive-foreground: 0 0% 98%;
-	--border: 240 3.7% 15.9%;
+
+	/* Subtle Borders */
+	--border: 240 3.7% 15.9%; /* Zinc-800 */
 	--input: 240 3.7% 15.9%;
-	--ring: 252 87% 65%;
+	--ring: 217 91% 60%;
+
+	/* Chart Colors */
 	--chart-1: 220 70% 50%;
 	--chart-2: 160 60% 45%;
 	--chart-3: 30 80% 55%;
@@ -111,21 +152,164 @@
 	--chart-5: 340 75% 55%;
 
 	/* Sidebar dark variables */
-	--sidebar-background: 240 5.9% 10%;
+	--sidebar-background: 240 5.9% 10%; /* Zinc-900 */
 	--sidebar-foreground: 240 4.8% 95.9%;
-	--sidebar-primary: 224.3 76.3% 48%;
+	--sidebar-primary: 217 91% 60%;
 	--sidebar-primary-foreground: 0 0% 100%;
 	--sidebar-accent: 240 3.7% 15.9%;
 	--sidebar-accent-foreground: 240 4.8% 95.9%;
 	--sidebar-border: 240 3.7% 15.9%;
-	--sidebar-ring: 217.2 91.2% 59.8%;
+	--sidebar-ring: 217 91% 60%;
 }
 
 @layer base {
 	* {
 		@apply border-border outline-ring/50;
 	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
 	body {
 		@apply bg-background text-foreground;
+	}
+
+	/* Custom Scrollbar */
+	::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #27272a; /* zinc-800 */
+		border-radius: 4px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #3f3f46; /* zinc-700 */
+	}
+
+	/* Enhanced focus states for keyboard navigation */
+	*:focus-visible {
+		@apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+	}
+
+	/* Design System Tokens */
+	:root {
+		/* Border Radius Scale */
+		--radius-sm: 0.25rem; /* 4px - Small elements, badges */
+		--radius-md: 0.5rem; /* 8px - Buttons, inputs */
+		--radius-lg: 0.75rem; /* 12px - Cards, containers */
+		--radius-xl: 1rem; /* 16px - Large cards */
+		--radius-2xl: 1.5rem; /* 24px - Hero cards, modals */
+
+		/* Spacing Scale (4px base) */
+		--spacing-xs: 0.5rem; /* 8px */
+		--spacing-sm: 1rem; /* 16px */
+		--spacing-md: 1.5rem; /* 24px */
+		--spacing-lg: 2rem; /* 32px */
+		--spacing-xl: 3rem; /* 48px */
+		--spacing-2xl: 4rem; /* 64px */
+	}
+
+	/* Typography utilities for consistent text styles */
+	.text-display {
+		@apply text-5xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl;
+	}
+
+	.text-heading-1 {
+		@apply text-3xl font-bold leading-tight tracking-tight sm:text-4xl;
+	}
+
+	.text-heading-2 {
+		@apply text-2xl font-bold leading-tight tracking-tight sm:text-3xl;
+	}
+
+	.text-heading-3 {
+		@apply text-xl font-bold leading-snug;
+	}
+
+	.text-body-lg {
+		@apply text-lg leading-relaxed;
+	}
+
+	.text-body {
+		@apply text-base leading-normal;
+	}
+
+	/* Custom keyframe animations */
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fade-in-up {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes slide-in-left {
+		from {
+			opacity: 0;
+			transform: translateX(-20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	/* Simple animation utility classes - performance optimized */
+	.animate-fade-in {
+		animation: fade-in 0.4s ease-out forwards;
+	}
+
+	.animate-fade-in-up {
+		animation: fade-in-up 0.5s ease-out forwards;
+	}
+
+	.animate-slide-in-left {
+		animation: slide-in-left 0.4s ease-out forwards;
+	}
+
+	/* Animation delay utilities - use sparingly */
+	.animation-delay-100 {
+		animation-delay: 100ms;
+	}
+
+	.animation-delay-200 {
+		animation-delay: 200ms;
+	}
+
+	.animation-delay-300 {
+		animation-delay: 300ms;
+	}
+
+	/* Respect user's motion preferences */
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+		}
 	}
 }

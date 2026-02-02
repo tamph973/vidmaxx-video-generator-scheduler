@@ -18,7 +18,7 @@ const steps = [
 	{
 		title: 'Auto-Schedule',
 		description:
-			'Connect your accounts and let VidMaxx post to YouTube, TikTok, and Instagram automatically.',
+			'Connect your accounts and let VidMax post to YouTube, TikTok, and Instagram automatically.',
 		icon: Share2,
 	},
 ];
@@ -39,29 +39,23 @@ export function HowItWorks() {
 					</p>
 				</div>
 
-				<div className='relative grid gap-8 md:grid-cols-3'>
-					{/* Connecting line for desktop */}
-					<div className='absolute top-12 hidden h-0.5 w-full bg-gradient-to-r from-transparent via-primary/50 to-transparent md:block' />
-
-					{steps.map((step, index) => (
+				<div className='grid gap-12 md:grid-cols-3'>
+					{steps.map((step) => (
 						<div
 							key={step.title}
-							className='relative flex flex-col items-center text-center'>
-							<div className='mb-6 flex h-24 w-24 items-center justify-center rounded-full border-4 border-black bg-zinc-900 shadow-xl z-10'>
-								<step.icon className='h-10 w-10 text-primary' />
+							className='flex flex-col items-center text-center cursor-pointer'>
+							<div className='mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-zinc-900 border border-white/15 text-primary transition-colors duration-200 hover:bg-zinc-800 hover:border-white/25'>
+								<step.icon
+									className='h-10 w-10'
+									aria-hidden='true'
+								/>
 							</div>
-							<div className='absolute top-12 left-1/2 -ml-12 h-24 w-24 -z-10 rounded-full bg-primary/20 blur-xl'></div>
-
-							<h3 className='mb-2 text-xl font-bold text-white'>
+							<h3 className='mb-3 text-xl font-bold text-white'>
 								{step.title}
 							</h3>
-							<p className='text-zinc-400 max-w-xs'>
+							<p className='leading-relaxed text-zinc-400'>
 								{step.description}
 							</p>
-
-							{index < steps.length - 1 && (
-								<ArrowRight className='absolute right-[-20px] top-20 hidden md:block text-zinc-700 w-8 h-8 -rotate-45 opacity-0' />
-							)}
 						</div>
 					))}
 				</div>

@@ -105,7 +105,7 @@ export default async function DashboardPage() {
 							size='lg'
 							className='shadow-lg hover:shadow-xl transition-all'
 							asChild>
-							<Link href='/dashboard/series'>
+							<Link href='/dashboard/create'>
 								<PlayCircle className='mr-2 size-4' />
 								Create New Series
 							</Link>
