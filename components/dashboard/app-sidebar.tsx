@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ModeToggle } from '@/components/mode-toggle';
 
 import {
 	Sidebar,
@@ -35,13 +36,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 					<div className='relative size-8 shrink-0'>
 						<Image
 							src='/logo.png'
-							alt='VidMaxx Logo'
+							alt='VidMax Logo'
 							fill
 							className='object-contain'
 						/>
 					</div>
 					<span className='text-xl font-bold tracking-tight text-foreground'>
-						VidMaxx
+						VidMax
 					</span>
 				</div>
 			</SidebarHeader>
@@ -50,17 +51,23 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 				<div className='px-2'>
 					<Button
 						className='w-full justify-start gap-2 h-11 text-base font-medium shadow-sm hover:shadow-md transition-all'
-						size='lg'>
-						<Plus className='size-5' />
-						Create New Series
+						size='lg'
+						asChild>
+						<Link href='/dashboard/create'>
+							<Plus className='size-5' aria-hidden='true' />
+							Create New Series
+						</Link>
 					</Button>
 				</div>
 
-				<div className='space-y-1'>
-					<div className='px-4 text-xs font-medium text-muted-foreground/70 uppercase tracking-wider mb-2'>
+				<div className='space-y-2'>
+					<div
+						className='px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3'
+						role='heading'
+						aria-level={2}>
 						Main
 					</div>
-					<SidebarMenu className='gap-1.5'>
+					<SidebarMenu className='gap-2'>
 						<SidebarMenuItem>
 							<SidebarMenuButton
 								asChild
@@ -86,11 +93,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 					</SidebarMenu>
 				</div>
 
-				<div className='space-y-1'>
-					<div className='px-4 text-xs font-medium text-muted-foreground/70 uppercase tracking-wider mb-2'>
+				<div className='space-y-2'>
+					<div
+						className='px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3'
+						role='heading'
+						aria-level={2}>
 						Support
 					</div>
-					<SidebarMenu className='gap-1.5'>
+					<SidebarMenu className='gap-2'>
 						<SidebarMenuItem>
 							<SidebarMenuButton
 								asChild
@@ -130,6 +140,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
 			<SidebarFooter className='p-4 bg-sidebar-accent/10'>
 				<SidebarMenu className='gap-2'>
+					<SidebarMenuItem className='flex items-center justify-between px-4 pb-2'>
+						<span className='text-[10px] font-bold text-slate-400 uppercase tracking-[0.15em]'>
+							Theme
+						</span>
+						<ModeToggle />
+					</SidebarMenuItem>
+					<SidebarSeparator className='my-2 bg-sidebar-border/50' />
 					<SidebarMenuItem>
 						<SidebarMenuButton
 							asChild

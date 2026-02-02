@@ -13,7 +13,7 @@ export function Footer() {
 								<Video className='h-4 w-4' />
 							</div>
 							<span className='text-xl font-bold text-white'>
-								VidMaxx
+								VidMax
 							</span>
 						</Link>
 						<p className='text-sm text-zinc-400'>
@@ -125,7 +125,7 @@ export function Footer() {
 				</div>
 
 				<div className='mt-16 border-t border-white/10 pt-8 text-center text-sm text-zinc-500'>
-					&copy; {new Date().getFullYear()} VidMaxx Inc. All rights
+					&copy; {new Date().getFullYear()} VidMax Inc. All rights
 					reserved.
 				</div>
 			</Container>
